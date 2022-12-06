@@ -1,0 +1,36 @@
+create database DesafioFinal
+
+use DesafioFinal
+
+create login DesafioFinal with password='Desafio_Final';
+create user DesafioFinal from login DesafioFinal;
+exec sp_addrolemember 'DB_DATAREADER', 'DesafioFinal';
+exec sp_addrolemember 'DB_DATAWRITER', 'DesafioFinal';
+
+
+create table Venda
+(
+    id integer primary key identity,
+	dataVenda date not null,
+	operadora varchar(50) not null,
+    cliente varchar(100) not null,
+	apelido varchar(50) not null,
+	tipo varchar(30) not null,
+	valorContrato float not null,
+	comissao float not null,
+	parcela int not null
+)
+
+create table Comissao
+(
+    id integer primary key identity,
+    relatorio varchar(50) not null,
+	notaFiscal varchar(20) not null,
+	valor float not null, 
+	dataRebimento date not null,
+    fk_venda integer,
+    foreign key (fk_venda) references Venda(id)
+)
+
+select * from Emails;
+select * from Pessoas;
