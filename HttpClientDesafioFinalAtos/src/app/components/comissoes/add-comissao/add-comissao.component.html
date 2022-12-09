@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Adicionar Nova Comissão</h1>
+    <form #form="ngForm" (ngSubmit)="addComissao()">
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="relatorio" class="form-label">Relatório:</label>
+                    <input type="text" class="form-control" id="relatorio" name="relatorio" placeholder="Digite o número do relatório" 
+                    [(ngModel)] = "addComissaoRequest.relatorio">
+                </div>
+                <div class="mb-3">
+                    <label for="notaFiscal" class="form-label">Nota Fiscal:</label>
+                    <input type="text" class="form-control" id="notaFiscal" name="notaFiscal" placeholder="Digite o número da Nota Fiscal"
+                    [(ngModel)] = "addComissaoRequest.notaFiscal">
+                </div>
+                <div class="mb-3">
+                    <label for="valor" class="form-label">Valor:</label>
+                    <input type="number" class="form-control" id="valor" name="valor" placeholder="Digite o valor da comissão"
+                    [(ngModel)] = "addComissaoRequest.valor">
+                </div>
+                <div class="mb-3">
+                    <label for="dataRecebimento" class="form-label">Data Recebimento:</label>
+                    <input type="date" class="form-control" id="dataRecebimento" name="dataRecebimento" placeholder="Digite a data de recebimento"
+                    [(ngModel)] = "addComissaoRequest.dataRebimento">
+                </div>
+                <div class="mb-3">
+                    <label for="fkVenda" class="form-label">Id da Venda</label>
+                    <input type="number" class="form-control" id="fkVenda" name="fkVenda" placeholder="Digite o id da Venda"
+                    [(ngModel)] = "addComissaoRequest.vendaId">
+                </div>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h1>Comissões</h1>
+        </div>
+    </div>
+    <table class="table" *ngIf="listaComissoes && listaComissoes.length > 0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Relatório</th>
+                <th>Nota fiscal</th>
+                <th>Valor</th>
+                <th>Data Recebimento</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let comissao of listaComissoes'>
+                <td>{{ comissao.id }}</td>
+                <td>{{ comissao.relatorio }}</td>
+                <td>{{ comissao.notaFiscal }}</td>
+                <td>{{ comissao.valor }}</td>
+                <td>{{ comissao.dataRebimento }}</td>
+                <td><a [routerLink]="['/comissoes','edit',comissao.id]">Inspecionar</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!listaComissoes || listaComissoes.length <= 0">Nenhuma comissão encontrada!</p>
+</div>
+

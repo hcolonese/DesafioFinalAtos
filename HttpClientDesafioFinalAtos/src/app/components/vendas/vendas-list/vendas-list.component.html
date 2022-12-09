@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h1>Vendas</h1>
+        </div>
+    </div>
+    <table class="table" *ngIf="listaVendas && listaVendas.length > 0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Data Venda</th>
+                <th>Operadora</th>
+                <th>Cliente</th>
+                <th>Apelido</th>
+                <th>Tipo</th>
+                <th>Valor Contrato</th>
+                <th>Porcentagem comissão</th>
+                <th>Parcela atual</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let venda of listaVendas'>
+                <td>{{ venda.id }}</td>
+                <td>{{ venda.dataVenda }}</td>
+                <td>{{ venda.operadora }}</td>
+                <td>{{ venda.cliente }}</td>
+                <td>{{ venda.apelido }}</td>
+                <td>{{ venda.tipo }}</td>
+                <td>{{ venda.valorContrato }}</td>
+                <td>{{ venda.comissao }}</td>
+                <td>{{ venda.parcela }}</td>
+                <td><a [routerLink]="['/vendas','edit',venda.id]">Inspecionar</a></td>
+                <td><a [routerLink]="['/venda/','comissoes',venda.id]">Ver Comissões</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!listaVendas || listaVendas.length <= 0">Nenhuma venda encontrada!</p>
+</div>
