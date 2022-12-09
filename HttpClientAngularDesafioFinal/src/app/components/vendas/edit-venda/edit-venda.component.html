@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Adicionar Nova Venda</h1>
+    <form #form="ngForm" (ngSubmit)="editVenda()">
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="id" class="form-label">Id:</label>
+                    <input type="text" class="form-control" id="id" name="id" readonly 
+                    [(ngModel)] = "vendaDetails.id">
+                </div>
+                <div class="mb-3">
+                    <label for="dataVenda" class="form-label">Data da Venda:</label>
+                    <input type="text" class="form-control" id="dataVenda" name="dataVenda" placeholder="Digite a data (dd/mm/yyyy)" 
+                    [(ngModel)] = "vendaDetails.dataVenda">
+                </div>
+                <div class="mb-3">
+                    <label for="operadora" class="form-label">Operadora:</label>
+                    <input type="text" class="form-control" id="operadora" name="operadora" placeholder="Digite a operadora"
+                    [(ngModel)] = "vendaDetails.operadora">
+                </div>
+                <div class="mb-3">
+                    <label for="cliente" class="form-label">Nome Cliente</label>
+                    <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Digite o nome do cliente"
+                    [(ngModel)] = "vendaDetails.cliente">
+                </div>
+                <div class="mb-3">
+                    <label for="apelido" class="form-label">Apelido</label>
+                    <input type="text" class="form-control" id="apelido" name="apelido" placeholder="Digite o apelido"
+                    [(ngModel)] = "vendaDetails.apelido">
+                </div>
+                <div class="mb-3">
+                    <label for="tipo" class="form-label">Tipo</label>
+                    <input type="text" class="form-control" id="tipo" name="tipo" placeholder="(PF/PJ)"
+                    [(ngModel)] = "vendaDetails.tipo">
+                </div>
+                <div class="mb-3">
+                    <label for="valor" class="form-label">Valor do Contrato</label>
+                    <input type="number" class="form-control" id="valor" name="valor" placeholder="Digite o valor do contrato"
+                    [(ngModel)] = "vendaDetails.valorContrato">
+                </div>
+                <div class="mb-3">
+                    <label for="comissao" class="form-label">Porcentagem da Comissão</label>
+                    <input type="number" class="form-control" id="comissao" name="comissao" placeholder="Digite a porcentagem da comissão"
+                    [(ngModel)] = "vendaDetails.comissao">
+                </div>
+                <div class="mb-3">
+                    <label for="parcela" class="form-label">Parcela</label>
+                    <input type="number" class="form-control" id="parcela" name="parcela" placeholder="Digite a parcela"
+                    [(ngModel)] = "vendaDetails.parcela">
+                </div>
+                <button type="submit" class="btn btn-primary mr-5">Editar</button>
+                <button type="button" (click)="deleteVenda(vendaDetails.id)" class="btn btn-danger ml-5">Apagar</button>
+            </div>
+        </div>
+    </form>
+</div>
