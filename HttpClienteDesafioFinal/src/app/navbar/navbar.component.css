@@ -1,0 +1,9 @@
+.navbar-custom {
+    background-color: #192f45;
+}
+.navbar li a {
+    color: whitesmoke;
+}
+.navbar.navbar-custom.navbar-expand-lg a {
+    color: whitesmoke;
+}

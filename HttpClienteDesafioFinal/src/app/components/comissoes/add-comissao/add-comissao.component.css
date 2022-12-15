@@ -4,3 +4,7 @@
 .container h1{
     margin-bottom: 3;
 }
+.btn{
+    background-color:  #192f45;
+    border-color: #192f45;
+}
